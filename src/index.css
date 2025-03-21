@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --neon-blue: 210 100% 50%;
+  }
+
+  .dark {
+    --background: 215 25% 27%;
+    --foreground: 210 40% 98%;
+    --card: 217 25% 32%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 25% 32%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 215 25% 27%;
+    --secondary: 217 23% 37%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 23% 37%;
+    --muted-foreground: 215 25% 80%;
+    --accent: 217 23% 37%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 40%;
+    --input: 217 23% 37%;
+    --ring: 216 34% 80%;
+    --neon-blue: 210 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Neon effect classes */
+.neon-blue {
+  color: hsl(var(--neon-blue));
+  text-shadow: 0 0 5px hsl(var(--neon-blue) / 0.5),
+               0 0 10px hsl(var(--neon-blue) / 0.3);
+}
+
+.text-neon-blue {
+  color: hsl(var(--neon-blue));
+}
+
+.bg-neon-blue {
+  background-color: hsl(var(--neon-blue));
+}
+
+/* Custom button variant */
+.btn-neon-blue {
+  background-color: hsl(var(--neon-blue) / 0.1);
+  color: hsl(var(--neon-blue));
+  border: 1px solid hsl(var(--neon-blue) / 0.2);
+  box-shadow: 0 0 5px hsl(var(--neon-blue) / 0.3);
+}
+
+.btn-neon-blue:hover {
+  background-color: hsl(var(--neon-blue) / 0.2);
+  box-shadow: 0 0 8px hsl(var(--neon-blue) / 0.5);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Custom button styles */
+.btn-outline-light {
+  @apply border border-border/60 bg-background/50 hover:bg-secondary/50 text-foreground;
+}
